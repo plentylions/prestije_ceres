@@ -1,2 +1,2 @@
 # prestije_ceres
-Discovery Shop für Prestije
+Legend Shop für Prestije

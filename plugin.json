@@ -1,0 +1,28 @@
+{
+    "version"           :   "2.17.0",
+    "license"           :   "AGPL-3.0",
+    "isClosedSource"    :   true,
+    "name"              :   "PrestijeLegend",
+    "marketplaceName"   :   {"de":"PrestijeLegend","en":"PrestijeLegend"},
+    "pluginIcon"        :   "icon_plugin_xs.png",
+    "authorIcon"        :   "icon_author_xs.png",
+    "email"             :   "info@plentylions.de",
+    "description"       :   "A PrestijeLegend theme for Legend.",
+    "shortDescription"  :   { "de": "Ein PrestijeLegend-Theme für Legend.", "en": "A PrestijeLegend theme for Legend." },
+    "namespace"         :   "PrestijeLegend",
+    "author"            :   "Plenty Lions GmbH",
+    "keywords"          :   ["plentymarkets", "plugins", "layout", "theme", "ceres"],
+    "price"             :   0,
+    "categories"        :   [3518],
+    "type"              :   "theme",
+    "require"           :   ["Legend"],
+    "serviceProvider"   :   "PrestijeLegend\\Providers\\PrestijeLegendServiceProvider",
+    "dataProviders"     :
+    [
+        {
+            "key"           :"PrestijeLegend\\Containers\\PrestijeLegendContainer",
+            "name"          :"Stylesheet",
+            "description"   :"Add changes to the CSS file"
+        }
+    ]
+}
