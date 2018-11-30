@@ -8,7 +8,7 @@ use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Templates\Twig;
 
-use PrestijeLegend\Extensions\TwigServiceProvider;
+use PrestijeLegend\Extensions\FreeFieldsExtension;
 
 
 /**
@@ -26,7 +26,13 @@ class PrestijeLegendServiceProvider extends ServiceProvider
 
     public function boot(Twig $twig, Dispatcher $dispatcher)
     {
+        $twig->addExtension(FreeFieldsExtension::class);
 
+        $dispatcher->listen('IO.tpl.item', function (TemplateContainer $container)
+        {
+            $container->setTemplate('PrestijeLegend::Item.SingleItemWrapper');
+            return false;
+        }, self::PRIORITY);
     }
 }
 
