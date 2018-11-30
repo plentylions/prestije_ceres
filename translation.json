@@ -1,0 +1,12 @@
+{
+  "sections": [
+    {
+      "name": "MultilingualismConfig.singleItem",
+      "prefix": "singleItem"
+    }
+  ],
+  "ignoredTranslationFiles":
+  [
+    "MultilingualismConfig.properties"
+  ]
+}
