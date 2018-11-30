@@ -5,3 +5,16 @@
     height: 100%;
     max-width:100%;
 }
+
+@media (max-width: 543px){
+    .cmp-product-thumb .thumb-image {
+        float: none;
+        width: auto;
+        display: block;
+    }
+    .cmp-product-thumb .thumb-content{
+        display: block;
+        width: auto;
+        margin-left: 0;
+    }
+}
