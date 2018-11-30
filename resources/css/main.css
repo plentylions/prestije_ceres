@@ -14,6 +14,7 @@
     }
     .cmp-product-thumb .thumb-content{
         display: block;
+        padding: .8rem;
         width: auto;
         margin-left: 0;
     }
