@@ -18,6 +18,7 @@
         min-height: 48px;
     }
     .cmp-product-thumb .prices{
+        align-items: center;
         min-height: 42px;
     }
     .cmp-product-thumb .thumb-image {
