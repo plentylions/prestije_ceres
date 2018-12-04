@@ -3,10 +3,23 @@
 }
 #single-carousel .owl-item img {
     height: 100%;
-    max-width:100%;
+    max-width: 100%;
 }
 
 @media (max-width: 543px){
+    .product-list > .col-xs-12{
+        width: 50%;
+    }
+    .cmp-product-thumb{
+        padding: 0;
+    }
+    .cmp-product-thumb .thumb-title{
+        font-size: 1rem;
+        min-height: 48px;
+    }
+    .cmp-product-thumb .prices{
+        min-height: 42px;
+    }
     .cmp-product-thumb .thumb-image {
         float: none;
         width: auto;
@@ -17,5 +30,18 @@
         padding: .8rem;
         width: auto;
         margin-left: 0;
+    }
+}
+
+@media (max-width: 380px){
+    .product-list > .col-xs-12{
+        width: 100%;
+    }
+    .cmp-product-thumb .thumb-title{
+        font-size: 1.15rem;
+        min-height: auto;
+    }
+    .cmp-product-thumb .prices{
+        min-height: auto;
     }
 }
