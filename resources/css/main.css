@@ -8,3 +8,18 @@
 .footer .widget-text .widget-inner{
     padding: 0;
 }
+
+/* Content Pages */
+.storeberlin{
+    margin: -1rem -1.5rem;
+}
+.storeberlin img{
+    max-width: 100%;
+}
+ul.slogoinfo > li {
+    padding-bottom:10px;
+}
+ul.slogoinfo > li:before {
+        content: '✓';
+        padding-right: 5px;
+}  
