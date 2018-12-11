@@ -57,3 +57,10 @@ ul.slogoinfo > li:before {
     clear: left;
     display: block;
 }
+hr.horizontal-break {
+    width: 100px;
+    margin: 20px auto 20px 0;
+    height: 3px;
+    background: #000;
+    border: none;
+}
