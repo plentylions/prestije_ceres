@@ -9,6 +9,41 @@
     padding: 0;
 }
 
+.cmp-product-thumb .vat, .cmp-product-thumb .vat-porto-info,
+.cmp-product-thumb .category-list-view-port{
+  display: none;
+}
+@media (min-width: 544px){
+  .cmp-product-thumb .thumb-content{
+    display: flex;
+  }
+  .cmp-product-thumb .thumb-meta{
+    flex: 1 1 20%;
+    margin: 0;
+  }
+  .cmp-product-thumb .prices{
+    justify-content: flex-end;
+    text-align: right;
+  }
+  .cmp-product-thumb .price,
+  .cmp-product-thumb .crossprice{
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  .cmp-product-thumb .price-view-port{
+    margin-right: 0;
+    line-height: 1.2rem;
+  }
+  .cmp-product-thumb .thumb-title{
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.2em;
+      min-height: 36px;
+      margin-bottom: 0;
+      margin-right: 10px;
+  }
+}
+
 /* Content Pages */
 .storeberlin{
     margin: -1rem -1.5rem;
