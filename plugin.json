@@ -16,13 +16,5 @@
     "categories"        :   [3518],
     "type"              :   "theme",
     "require"           :   ["Legend"],
-    "serviceProvider"   :   "PrestijeLegend\\Providers\\PrestijeLegendServiceProvider",
-    "dataProviders"     :
-    [
-        {
-            "key"           :"PrestijeLegend\\Containers\\PrestijeLegendContainer",
-            "name"          :"Stylesheet",
-            "description"   :"Add changes to the CSS file"
-        }
-    ]
+    "serviceProvider"   :   "PrestijeLegend\\Providers\\PrestijeLegendServiceProvider"
 }

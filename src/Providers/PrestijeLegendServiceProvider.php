@@ -28,6 +28,10 @@ class PrestijeLegendServiceProvider extends ServiceProvider
     {
         $twig->addExtension(FreeFieldsExtension::class);
 
+        $eventDispatcher->listen('IO.Resources.Import', function (ResourceContainer $container) {
+            $container->addStyleTemplate('PrestijeLegend::Stylesheet');
+        }, self::PRIORITY);
+
         $dispatcher->listen('IO.tpl.item', function (TemplateContainer $container)
         {
             $container->setTemplate('PrestijeLegend::Item.SingleItemWrapper');
