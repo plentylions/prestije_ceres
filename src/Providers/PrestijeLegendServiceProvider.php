@@ -32,6 +32,12 @@ class PrestijeLegendServiceProvider extends ServiceProvider
             $container->addStyleTemplate('PrestijeLegend::Stylesheet');
         }, self::PRIORITY);
 
+        $dispatcher->listen('IO.tpl.home', function (TemplateContainer $container)
+        {
+            $container->setTemplate('PrestijeLegend::Homepage.Homepage');
+            return false;
+        }, self::PRIORITY);
+
         $dispatcher->listen('IO.tpl.item', function (TemplateContainer $container)
         {
             $container->setTemplate('PrestijeLegend::Item.SingleItemWrapper');
