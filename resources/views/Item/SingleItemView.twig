@@ -30,7 +30,7 @@
         {% endif %}
 
         {% set freeFields = getFree(item.documents[0].data.item.id) %}
-        {% if freeFields.free1 |trim is not empty %}
+        {% if freeFields.free1|trim is not empty %}
             <a href="{{ freeFields.free1 }}" data-lightbox="iframe"><i class="fa fa-play-circle"></i> {{ trans("PrestijeLegend::Template.singleItemVideoButtonText") }}</a>
         {% endif %}
         <span>{{ freeFields.free1 }}</span>
