@@ -10,6 +10,8 @@
 {{ component( "Legend::Item.Components.AddToBasket" ) }}
 {{ component( "Ceres::Item.Components.ItemBundle" ) }}
 
+{% set freeFields = getFree(item.documents[0].data.item.id) %}
+
 <single-item v-cloak template="#vue-single-item" :item-data="{{ item | json_encode }}" :variation-list-data="{{ variations | json_encode }}" :attribute-name-map="{{attributeNameMap | json_encode}}" :variation-units="{{variationUnits | json_encode}}">
     <div slot="BeforePrice">{{ LayoutContainer.show("Ceres::SingleItem.BeforePrice", item.documents[0].data) }}</div>
     <div slot="AfterPrice">{{ LayoutContainer.show("Ceres::SingleItem.AfterPrice", item.documents[0].data) }}</div>
@@ -29,10 +31,23 @@
             {{ ImageCarouselOverride }}
         {% endif %}
 
-        {% set freeFields = getFree(item.documents[0].data.item.id) %}
         {% if freeFields.free1|trim is not empty %}
-            <a href="{{ freeFields.free1 }}" data-lightbox="iframe"><i class="fa fa-play-circle"></i> {{ trans("PrestijeLegend::Template.singleItemVideoButtonText") }}</a>
+            <a href="#video-modal" data-toggle="modal" data-target="#video-modal"><i class="fa fa-play-circle"></i> {{ trans("PrestijeLegend::Template.singleItemVideoButtonText") }}</a>
         {% endif %}
-        <span>{{ freeFields.free1 }}</span>
     </div>
 </single-item>
+
+{% if freeFields.free1|trim is not empty %}
+<div class="modal fade video-modal" id="video-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <div class="video-modal-container">
+                <iframe class="video-popup-iframe" src="{{ freeFields.free1 }}" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+{% endif %}
