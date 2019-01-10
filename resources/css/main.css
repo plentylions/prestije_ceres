@@ -44,6 +44,17 @@
   }
 }
 
+.fvideo-open-button{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    z-index: 99;
+    color: #fff !important;
+    background-color: #d65957;
+    padding: 8px 8px;
+    padding: 0 8px;
+    line-height: 36px;
+}
 .video-modal .modal-dialog{
     width: 90%;
     max-width: 1200px;
