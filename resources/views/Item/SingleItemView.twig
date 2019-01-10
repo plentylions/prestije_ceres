@@ -44,7 +44,9 @@
           <div class="modal-body">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <div class="video-modal-container">
-                <iframe class="video-popup-iframe" src="{{ freeFields.free1 }}" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <video class="video-popup-video" controls>
+                    <source src="{{ freeFields.free1 }}" type="video/mp4">
+                </video>
               </div>
           </div>
       </div>
