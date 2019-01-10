@@ -30,6 +30,7 @@ class PrestijeLegendServiceProvider extends ServiceProvider
 
         $dispatcher->listen('IO.Resources.Import', function (ResourceContainer $container) {
             $container->addStyleTemplate('PrestijeLegend::Stylesheet');
+            $container->addScriptTemplate('PrestijeLegend::Script');
         }, self::PRIORITY);
 
         $dispatcher->listen('IO.tpl.home', function (TemplateContainer $container)
