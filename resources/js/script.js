@@ -11,7 +11,6 @@ $(function () {
     let hasChild = navDirection.length > 0;
     if (hasChild) {
       navDirection.trigger('click');
-    } else {
       return false;
     }
   });
