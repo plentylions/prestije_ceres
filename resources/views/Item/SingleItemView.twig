@@ -1,13 +1,11 @@
-{{ services.lastSeen.setLastSeenMaxCount(config("Ceres.item.lists.last_seen_number")) }}
-
 {{ component( "Legend::Item.Components.VariationSelect" ) }}
 {{ component( "Ceres::Item.Components.ItemImageCarousel" ) }}
 {{ component( "Legend::Item.Components.AddToWishList" ) }}
 {{ component( "Ceres::Item.Components.OrderProperties" ) }}
 {{ component( "Ceres::Item.Components.OrderPropertyList" ) }}
 {{ component( "Legend::Item.Components.SingleItem" ) }}
-{{ component( "Ceres::Item.Components.GraduatedPrices" ) }}
-{{ component( "Legend::Item.Components.AddToBasket" ) }}
+{{ component( "Legend::Item.Components.GraduatedPrices" ) }}
+{{ component( "Legend::Basket.Components.AddToBasket" ) }}
 {{ component( "Ceres::Item.Components.ItemBundle" ) }}
 
 {% set freeFields = getFree(item.documents[0].data.item.id) %}
@@ -22,7 +20,7 @@
     <template slot="AddDetailTabs">{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabs", item.documents[0].data) }}</template>
     <template slot="AddDetailTabsContent">{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabsContent", item.documents[0].data) }}</template>
     <div class="sinle-item-list-container" slot="ItemListContainer">{{ LayoutContainer.show("Ceres::SingleItem.ItemListContainer", item) }}</div>
-    <div slot="FeedbackContainer">{{ LayoutContainer.show("Ceres::SingleItem.FeedbackContainer", item) }}</div>
+    <template slot="FeedbackContainer">{{ LayoutContainer.show("Ceres::SingleItem.FeedbackContainer", item) }}</template>
     <div slot="ImageCarousel">
         {% set ImageCarouselOverride = LayoutContainer.show("Ceres::SingleItem.ImageCarousel") %}
         {% if ImageCarouselOverride|trim is empty %}
@@ -30,7 +28,6 @@
         {% else %}
             {{ ImageCarouselOverride }}
         {% endif %}
-
         {% if freeFields.free1|trim is not empty %}
             <a class="fvideo-open-button" href="#video-modal" data-toggle="modal" data-target="#video-modal"><i class="fa fa-play-circle"></i><span class="text">{{ trans("PrestijeLegend::Template.singleItemVideoButtonText") }}</span></a>
         {% endif %}
