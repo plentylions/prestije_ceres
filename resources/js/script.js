@@ -6,7 +6,7 @@ $(function () {
     $('#video-modal .video-popup-video').trigger('pause');
   });
 
-  $('.mobile-navigation .mainmenu a').on('click', function () {
+  $(document).on('click', '.mobile-navigation', function () {
     let navDirection = $(this).parent().find('.nav-direction');
     let hasChild = navDirection.length > 0;
     if (hasChild) {
