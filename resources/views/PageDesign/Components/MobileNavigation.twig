@@ -25,7 +25,8 @@
             </li>
 
             <li class="ddown" v-for="category in dataContainer1" v-show="!category.hideCategory">
-                <a @click="slideTo(category.children)" v-if="category.showChildren || category.details[0]">${ category.details[0].name }</a>
+                <a :href="category.url" v-if="(category.showChildren || category.details[0]) && !(category.children && category.showChildren)">${ category.details[0].name }</a>
+                <a @click="slideTo(category.children)" v-if="(category.showChildren || category.details[0]) && (category.children && category.showChildren)">${ category.details[0].name }</a>
 
                 <span class="nav-direction" v-if="category.children && category.showChildren" @click="slideTo(category.children)">
                     <i class="fa fa-lg fa-caret-right" aria-hidden="true"></i>
@@ -41,7 +42,8 @@
             </li>
 
             <li class="ddown" v-for="category in dataContainer2" v-show="!category.hideCategory">
-                <a @click="slideTo(category.children)" v-if="category.showChildren || category.details[0]">${ category.details[0].name }</a>
+                <a :href="category.url" v-if="(category.showChildren || category.details[0]) && !(category.children && category.showChildren)">${ category.details[0].name }</a>
+                <a @click="slideTo(category.children)" v-if="(category.showChildren || category.details[0]) && (category.children && category.showChildren)">${ category.details[0].name }</a>
                 
                 <span class="nav-direction" v-if="category.children && category.showChildren" @click="slideTo(category.children)">
                     <i class="fa fa-lg fa-caret-right" aria-hidden="true"></i>
