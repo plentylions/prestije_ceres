@@ -15,5 +15,20 @@
     "categories"        :   [3518],
     "type"              :   "theme",
     "require"           :   ["Legend"],
-    "serviceProvider"   :   "PrestijeLegend\\Providers\\PrestijeLegendServiceProvider"
+    "serviceProvider"   :   "PrestijeLegend\\Providers\\PrestijeLegendServiceProvider",
+    "dataProviders":
+    [
+        {
+            "key": "PrestijeLegend\\Containers\\TrackingBeforeBodyEnd",
+            "name": "Prestije Tracking before body end",
+            "description": "Prestije Tracking before body end",
+            "defaultLayoutContainer": "Script.AfterScriptsLoaded"
+        },
+        {
+            "key": "PrestijeLegend\\Containers\\TrackingOrderConfirmation",
+            "name": "Prestije Tracking order confirmation",
+            "description": "Prestije Tracking order confirmation",
+            "defaultLayoutContainer": "OrderConfirmation.BeforeOrderDetails"
+        }
+    ]
 }
