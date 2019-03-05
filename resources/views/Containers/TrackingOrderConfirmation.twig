@@ -1,1 +1,5 @@
-teeeeest{{ orderData|json_encode()|raw }}
+<script type="text/javascript" src="https://t.adcell.com/t/track.js?pid=7072&eventid=9023&referenz={{ orderData.id }}&betrag={{ orderData.amounts.netTotal }}">
+</script>
+<noscript>
+<img border="0" width="1" height="1" src="https://t.adcell.com/t/track?pid=7072&eventid=9023&referenz={{ orderData.id }}&betrag={{ orderData.amounts.netTotal }}">
+</noscript>
