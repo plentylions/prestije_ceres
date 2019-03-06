@@ -35,12 +35,24 @@
     line-height: 1.2rem;
   }
   .cmp-product-thumb .thumb-title{
-      text-align: left;
-      font-size: 0.9rem;
-      line-height: 1.2em;
-      min-height: 38px;
-      margin-bottom: 0;
-      margin-right: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.2em;
+    min-height: 38px;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 543px){
+  .widget-item-list .widget-inner>.row>.col-12, .product-list>.col-12 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 330px){
+  .widget-item-list .widget-inner>.row>.col-12, .product-list>.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
