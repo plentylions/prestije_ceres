@@ -5,7 +5,7 @@
 {{ component( "PrestijeLegend::PageDesign.Components.MobileNavigation" ) }}
 {{ component( "Legend::ItemList.Components.ItemSearch" ) }}
 {{ component( "Legend::WishList.Components.WishListCount" ) }}
-{{ component( "Ceres::Basket.Components.BasketPreviewHover" ) }}
+{{ component( "Legend::Basket.Components.BasketPreviewHover" ) }}
 
 {% set lang = services.sessionStorage.getLang() %}
 {% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}

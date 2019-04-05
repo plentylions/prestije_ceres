@@ -13,7 +13,7 @@
 .cmp-product-thumb .category-list-view-port{
   display: none;
 }
-@media (min-width: 544px){
+@media (min-width: 576px){
   .cmp-product-thumb .thumb-content{
     display: flex;
   }
@@ -43,7 +43,7 @@
     margin-right: 10px;
   }
 }
-@media (max-width: 543px){
+@media (max-width: 575.98px){
   .widget-item-list .widget-inner>.row>.col-12, .product-list>.col-12 {
     flex: 0 0 50%;
     max-width: 50%;
