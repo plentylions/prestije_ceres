@@ -56,6 +56,11 @@
   }
 }
 
+
+.categoriegrid .cmp.cmp-paginator{
+    display: none;
+}
+
 .square-container{
     padding-bottom: 150%;
 }

@@ -30,7 +30,7 @@ $(function () {
     let $container = $('.product-list').parent().infiniteScroll({
       path: nextUrl,
       append: false,
-      history: 'push',
+      history: false,
       checkLastPage: false
     });
 
