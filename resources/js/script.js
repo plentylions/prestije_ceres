@@ -27,6 +27,8 @@ $(function () {
       nextUrl += '?page={{#}}';
     }
 
+    $( ".product-list" ).wrap( "<div class='inf-scroll-parent'></div>" );
+
     let $container = $('.product-list').parent().infiniteScroll({
       path: nextUrl,
       append: false,
