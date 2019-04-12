@@ -158,6 +158,17 @@
     }
 }
 
+/* Basket */
+.basket-item-container .basket-item .image-container{
+  max-height: 100px;
+}
+.basket-item-container .basket-item .meta-container-wrapper .meta-container-wrapper-inner{
+  flex-wrap: wrap;
+}
+.basket-item-container .basket-item .meta-container-wrapper .meta-container-wrapper-inner .meta-container{
+  order: 100;
+}
+
 /* Content Pages */
 .storeberlin{
     margin: 1rem -1.5rem -1rem;
