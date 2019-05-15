@@ -83,7 +83,7 @@
 
                 {{ Twig.print(Twig.call("LayoutContainer.show", ["Ceres::Header.LeftSide"])) }}
 
-                <ul id="controlsList" class="controls-list list-inline">
+                <ul id="controlsListRight" class="controls-list list-inline">
                     {% if enableLogin %}
                         <li class="list-inline-item control-user">
                             <user-login-handler :show-registration="{{ enableRegistration | json_encode }}">
@@ -111,11 +111,10 @@
                         </li>
                         {{ Twig.endif() }}
                     {% endif %}
-                </ul>
-                <ul id="controlsListRight" class="controls-list d-lg-none list-inline">
+
                     {% if enableBasketPreview %}
                         <li class="list-inline-item control-basket">
-                            <a href="{{ Twig.print('urls.basket') }}" class="toggle-basket-preview">
+                            <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
                                 {% if basketValues != "sum" %}
                                     <span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
                                 {% endif %}
@@ -126,6 +125,9 @@
                                     <span class="badge" v-else v-cloak v-basket-item-sum="$store.state.basket.data.itemSumNet">0,00 {{ Twig.print("currencyData") }}</span>
                                 {% endif %}
                             </a>
+                            {{ Twig.if("basketPreviewType != \"right\"") }}
+                                <basket-preview template="#vue-basket-preview-hover" :show-net-prices="{{ Twig.print("showNetPrices | json_encode") }}"></basket-preview>
+                            {{ Twig.endif() }}
                         </li>
                     {% endif %}
                 </ul>
@@ -239,7 +241,7 @@
                         <span class="pl-material pl-outline-dehaze"></span>
                     </button>
                 </div>
-                <div class="col-12 col-sm-6 col-md-7 col-lg-4 sm-1 searchCol nopad-mobile">
+                <div class="col-12 col-sm-6 col-md-7 col-lg-8 searchCol nopad-mobile">
                     {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
                     {% if overrideSearchBar | trim is empty %}
                         <item-search 
@@ -248,17 +250,6 @@
                     {% else %}
                         {{ overrideSearchBar | raw }}
                     {% endif %}
-                </div>
-                <div class="col-md-4 col-lg-4 hidden-md-down nopad-mobile text-right">
-                    <a v-toggle-basket-preview href="#" class="toggle-basket-preview">
-                        <span class="pl-material pl-outline-shopping_cart"></span>
-                        {{ trans('Legend::Template.headerCart1') }} <span class="qty" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span> {{ trans('Legend::Template.headerCart2') }}
-                        <span class="sum" v-if="!$store.state.basket.showNetPrices" v-basket-item-sum="$store.state.basket.data.itemSum">0,00 {{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
-                        <span class="sum" v-else v-cloak v-basket-item-sum="$store.state.basket.data.itemSumNet">0,00 {{ services.checkout.getCurrencyData()[currencyFormat] }}</span>
-                    </a>
-                    {{ Twig.if("basketPreviewType != \"right\"") }}
-                        <basket-preview template="#vue-basket-preview-hover" :show-net-prices="{{ Twig.print("showNetPrices | json_encode") }}"></basket-preview>
-                    {{ Twig.endif() }}
                 </div>
             </div>
         </div>
