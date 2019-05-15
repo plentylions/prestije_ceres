@@ -48,8 +48,23 @@
     <div class="before-header">
         <div class="container-max">
             <div class="row mx-0 flex-row align-items-center">
+                <div id="mainNavbarCollapsable" class="d-none d-lg-block">
+                    <ul class="breadcrumb">
+                        <li class="btnClose"></li>
+                    </ul>
+
+                    <ul class="mainmenu">
+                        {{ Twig.print(Twig.call("Tree.get_nav_bar", [Twig.var("categories"), "", megaMenuLevels, megaMenuMaxItems, realMaxRootItems])) }}
+                    </ul>
+                </div>
+
                 {% if enableLanguageSelect or enableShippingCountrySelect or enableCurrencySelect %}
                     <ul id="controlsListLeft" class="controls-list list-inline">
+                        <li class="list-inline-item d-lg-none">
+                            <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler" type="button">
+                                <span class="pl-material pl-outline-dehaze"></span>
+                            </button>
+                        </li>
                         {% if enableLanguageSelect or enableShippingCountrySelect %}
                             <li class="list-inline-item dropdown control-languages">
                                 <a data-toggle="collapse"
@@ -231,17 +246,12 @@
     <div class="nv-wrap">
         <div class="container-max">
             <div class="row mx-0 flex-row align-items-center">
-                <div class="col-10 col-sm-5 col-md-4 col-lg-4 site-logo">
+                <div class="col-12 col-sm-6 col-md-4 site-logo">
                     <a class="navbar-brand float-lg-left" href="{{ Twig.print('urls.home') }}">
                         <img alt="{{ Twig.print('trans("Ceres::Template.headerCompanyName")') }}" src="{{ companyLogoUrl }}" class="img-fluid" />
                     </a>
                 </div>
-                <div class="col-2 col-sm-1 order-sm-5 order-0 text-right nopad-mobile d-lg-none">
-                    <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler" type="button">
-                        <span class="pl-material pl-outline-dehaze"></span>
-                    </button>
-                </div>
-                <div class="col-12 col-sm-6 col-md-7 col-lg-8 searchCol nopad-mobile">
+                <div class="col-12 col-sm-6 col-md-8 searchCol nopad-mobile">
                     {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
                     {% if overrideSearchBar | trim is empty %}
                         <item-search 
@@ -251,19 +261,6 @@
                         {{ overrideSearchBar | raw }}
                     {% endif %}
                 </div>
-            </div>
-        </div>
-    </div>
-    <div id="mainTopMenuWrapper" class="hidden-md-down" {% if isFixed %}data-sticky="true"{% endif %}>
-        <div class="container-max">
-            <div id="mainNavbarCollapsable">
-                <ul class="breadcrumb">
-                    <li class="btnClose"></li>
-                </ul>
-
-                <ul class="mainmenu">
-                    {{ Twig.print(Twig.call("Tree.get_nav_bar", [Twig.var("categories"), "", megaMenuLevels, megaMenuMaxItems, realMaxRootItems])) }}
-                </ul>
             </div>
         </div>
     </div>
