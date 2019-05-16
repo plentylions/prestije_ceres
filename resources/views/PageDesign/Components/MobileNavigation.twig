@@ -16,6 +16,12 @@
             </li>
         </ul>
 
+        <div class="mobile-search">
+            <item-search 
+                :show-item-images="{{ true | json_encode }}"
+                :forward-to-single-item="{{ true | json_encode }}"></item-search>
+        </div>
+
 
         <ul v-menu id="menu-1" class="mainmenu menu-active">
             <li class="ddown" v-if="parentCategories" @click="slideTo(parentCategories, true)">

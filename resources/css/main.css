@@ -196,6 +196,7 @@
 }
 .top-bar .controls-list>li .pl-material{
   font-size: 1.8rem;
+  vertical-align: middle;
 }
 .header-bottom-line{
   background-color: #f3f3f3;
@@ -217,6 +218,9 @@
   display: inline-block;
   width: 160px;
 }
+.top-bar .site-logo .navbar-brand img{
+  max-width: 160px;
+}
 .top-bar .controls-list .control-basket .toggle-basket-preview .badge {
   margin-left: 0;
 }
@@ -236,6 +240,9 @@
   }
 }
 @media (max-width: 991px){
+  .top-bar .controls-list i.flag-icon{
+    font-size: 1.2rem !important;
+  }
   .navbar-toggler{
     left: 0;
     padding-right: 5px;
