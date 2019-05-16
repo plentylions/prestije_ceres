@@ -65,6 +65,7 @@
                         <li class="list-inline-item d-lg-none">
                             <button id="btnMainMenuToggler" v-open-mobile-navigation class="navbar-toggler" type="button">
                                 <span class="pl-material pl-outline-dehaze"></span>
+                                <span class="pl-material pl-baseline-search"></span>
                             </button>
                         </li>
                         {% if enableLanguageSelect or enableShippingCountrySelect %}
@@ -73,7 +74,7 @@
                                 href="#countrySettings"
                                 aria-expanded="false"
                                 aria-controls="countrySettings"
-                                data-parent="#controlsList">
+                                data-parent="#controlsListLeft">
                                     {% if showLanguageSelectFlags %}
                                     <i class="flag-icon flag-icon-{{ Twig.print('lang') }}"></i>
                                     {% else %}
@@ -90,7 +91,7 @@
                                 href="#currencySelect"
                                 aria-expanded="false"
                                 aria-controls="currencySelect"
-                                data-parent="#controlsList">
+                                data-parent="#controlsListLeft">
                                     <span>{{ Twig.print("currencyData") }}</span>
                                 </a>
                             </li>
@@ -129,6 +130,7 @@
                             <wish-list-count>
                                 <a>
                                     <span class="pl-material pl-outline-favorite_border"></span>
+                                    <span class="badge-right">0</span>
                                 </a>
                             </wish-list-count>
                         </li>
@@ -255,7 +257,7 @@
                 <div class="col-12 col-lg-3 d-none d-lg-block nopad-mobile">
                     <span>Dein onlineshop für abendmode</span>
                 </div>
-                <div class="col-12 col-lg-6 d-flex justify-content-around nopad-mobile">
+                <div class="col-12 col-lg-6 d-flex justify-content-around">
                     <span>Kostenlose lieferung</span>
                     <span>Kauf auf rechnung</span>
                     <span>nur 1-3 tage lieferzeit</span>
