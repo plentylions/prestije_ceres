@@ -252,9 +252,13 @@
 .mobile-navigation .mobile-search{
   padding: 2rem 1rem
 }
+.mobile-search.searchCol .search-submit{
+  top: 3px;
+}
 .searchCol .search-submit{
   color: #000;
   font-size: 1.8rem;
+  top: -1px;
 }
 
 /* Basket */
