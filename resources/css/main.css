@@ -180,6 +180,9 @@
   font-size: 1rem !important;
   vertical-align: baseline;
 }
+.top-bar .controls-list>li .pl-material{
+  font-size: 1.8rem;
+}
 .header-bottom-line{
   background-color: #f3f3f3;
   text-transform: uppercase;
@@ -199,6 +202,9 @@
   margin: 0 auto;
   display: inline-block;
   width: 160px;
+}
+.top-bar .controls-list .control-basket .toggle-basket-preview .badge {
+  margin-left: 0;
 }
 @media (min-width: 1200px){
   .wrapper-main #page-header .container-max{

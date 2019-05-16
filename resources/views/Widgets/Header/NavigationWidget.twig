@@ -45,7 +45,7 @@
 {{ Twig.import("Tree", "Legend::Category.Macros.CategoryTree") }}
 
 <div class="widget-fw top-bar">
-    <div class="before-header">
+    <div class="before-header" {% if isFixed %}data-sticky="true"{% endif %}>
         <div class="container-max">
             <div class="row mx-0 flex-row align-items-center">
                 <nav class="navbar{% if navigationStyle == 'megaMenu' %} megamenu{%endif%}">
@@ -109,7 +109,8 @@
                 <ul id="controlsListRight" class="controls-list list-inline">
                     {% if enableLogin %}
                         <li class="list-inline-item control-user">
-                            <user-login-handler :show-registration="{{ enableRegistration | json_encode }}">
+                            <a href="/login/"><span class="pl-material pl-outline-person_outline"></span></a>
+                            {#<user-login-handler :show-registration="{{ enableRegistration | json_encode }}">
                                 <a data-toggle="modal">
                                     <span class="pl-material pl-outline-exit_to_app"></span>
                                     <span class="hidden-sm-down">{{ trans("Ceres::Template.login") }}</span>
@@ -118,7 +119,7 @@
                                     <span class="pl-material pl-outline-person_add"></span>
                                     <span class="hidden-sm-down">{{ trans("Ceres::Template.loginRegister") }}</span>
                                 </a>
-                            </user-login-handler>
+                            </user-login-handler>#}
                         </li>
                     {% endif %}
 
@@ -141,7 +142,7 @@
                                     <span class="badge-right" v-basket-item-quantity="$store.state.basket.data.itemQuantity">0</span>
                                 {% endif %}
 
-                                <span class="pl-material pl-outline-shopping_cart"></span>
+                                <span class="pl-material pl-baseline-local_mall"></span>
                                 {% if basketValues != "quantity" %}
                                     <span class="badge" v-if="!$store.state.basket.showNetPrices" v-basket-item-sum="$store.state.basket.data.itemSum">0,00 {{ Twig.print("currencyData") }}</span>
                                     <span class="badge" v-else v-cloak v-basket-item-sum="$store.state.basket.data.itemSumNet">0,00 {{ Twig.print("currencyData") }}</span>
@@ -254,7 +255,7 @@
                 <div class="col-12 col-lg-3 d-none d-lg-block nopad-mobile">
                     <span>Dein onlineshop für abendmode</span>
                 </div>
-                <div class="col-12 col-lg-6 text-center nopad-mobile">
+                <div class="col-12 col-lg-6 d-flex justify-content-around nopad-mobile">
                     <span>Kostenlose lieferung</span>
                     <span>Kauf auf rechnung</span>
                     <span>nur 1-3 tage lieferzeit</span>

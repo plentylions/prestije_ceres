@@ -64,4 +64,17 @@ $(function () {
   $('#video-modal').on('hidden.bs.modal', function () {
     $('#video-modal .video-popup-video').trigger('pause');
   });
+
+  if ($('.top-bar .before-header').attr('data-sticky') == 'true') {
+    // Check the initial Poistion of the Sticky Header
+    var stickyHeaderTop = $('.top-bar .before-header').offset().top;
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > stickyHeaderTop) {
+            $('.top-bar .before-header').addClass('sticky');
+        } else {
+            $('.top-bar .before-header').removeClass('sticky');
+        }
+    });
+  }
 });
