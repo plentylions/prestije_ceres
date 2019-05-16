@@ -98,6 +98,12 @@
 
                 {{ Twig.print(Twig.call("LayoutContainer.show", ["Ceres::Header.LeftSide"])) }}
 
+                <div class="site-logo">
+                    <a class="navbar-brand" href="{{ Twig.print('urls.home') }}">
+                        <img alt="{{ Twig.print('trans("Ceres::Template.headerCompanyName")') }}" src="{{ companyLogoUrl }}" class="img-fluid" />
+                    </a>
+                </div>
+
                 <ul id="controlsListRight" class="controls-list list-inline">
                     {% if enableLogin %}
                         <li class="list-inline-item control-user">
@@ -246,11 +252,6 @@
     <div class="nv-wrap">
         <div class="container-max">
             <div class="row mx-0 flex-row align-items-center">
-                <div class="col-12 col-sm-6 col-md-4 site-logo">
-                    <a class="navbar-brand float-lg-left" href="{{ Twig.print('urls.home') }}">
-                        <img alt="{{ Twig.print('trans("Ceres::Template.headerCompanyName")') }}" src="{{ companyLogoUrl }}" class="img-fluid" />
-                    </a>
-                </div>
                 <div class="col-12 col-sm-6 col-md-8 searchCol nopad-mobile">
                     {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
                     {% if overrideSearchBar | trim is empty %}

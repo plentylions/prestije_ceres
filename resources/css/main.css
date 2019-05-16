@@ -159,16 +159,19 @@
 }
 
 /* Header */
+.navbar-toggler{
+  position: relative;
+  transform: none;
+  top: 0;
+}
+.top-bar .controls-list .control-user{
+  flex: initial;
+}
 @media (min-width: 992px){
   #mainNavbarCollapsable {
     width: auto;
     padding: 0;
   }
-}
-.navbar-toggler{
-  position: relative;
-  transform: none;
-  top: 0;
 }
 
 /* Basket */
