@@ -250,10 +250,11 @@
   }
 }
 .mobile-navigation .mobile-search{
-  padding: 2rem 1rem
+  padding: 2rem 1rem;
+  font-size: 1rem;
 }
 .mobile-search.searchCol .search-submit{
-  top: 3px;
+  top: 0px;
 }
 .searchCol .search-submit{
   color: #000;
