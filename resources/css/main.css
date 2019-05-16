@@ -167,6 +167,23 @@
 .top-bar .controls-list .control-user{
   flex: initial;
 }
+.top-bar .before-header{
+  border-bottom-style: solid;
+}
+.header-bottom-line{
+  background-color: #f3f3f3;
+  text-transform: uppercase;
+  color: #000;
+}
+.header-bottom-line .row{
+  height: 55px;
+}
+@media (min-width: 1200px){
+  .wrapper-main #page-header .container-max{
+    max-width: 100%;
+    padding: 0 30px;
+  }
+}
 @media (min-width: 992px){
   #mainNavbarCollapsable {
     width: auto;
