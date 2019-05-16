@@ -186,9 +186,11 @@
   padding-bottom: 12px;
   background-color: #fff;
 }
-.wrapper-main .navbar a,
-.header-bottom-line{
+.wrapper-main .navbar a{
   font-size: 0.86rem;
+}
+.header-bottom-line{
+  font-size: 0.8rem;
 }
 .top-bar .controls-list i.flag-icon{
   font-size: 1rem !important;
@@ -250,6 +252,10 @@
   margin: 0;
 }
 @media (min-width: 1200px){
+  .header-bottom-line{
+    font-size: 0.86rem;
+  }
+  .header-bottom-line
   .wrapper-main #page-header .container-max{
     max-width: 100%;
     padding: 0 15px;
