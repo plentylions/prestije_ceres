@@ -254,6 +254,37 @@
     max-width: 100%;
     padding: 0 15px;
   }
+  .top-bar .controls-list>li a:not(.btn){
+    padding: 5px 20px;
+  }
+  .top-bar .controls-list>li.control-languages{
+    padding-left: 25px;
+  }
+  .searchCol .search-input{
+    width: auto;
+    flex: 1 0 auto;
+    border-radius: 4px;
+  }
+  .searchCol .search-submit{
+    position: relative;
+    top: 0 !important;
+    right: 0;
+    left: 0;
+    width: auto;
+    background-color: #000;
+    color: #fff !important;
+    font-size: inherit !important;
+    padding: 0 15px;
+    margin-left: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .searchCol .search-submit:after{
+    content: 'SUCHE';
+  }
+  .searchCol .search-submit > span{
+    display: none;
+  }
 }
 @media (min-width: 992px){
   #mainNavbarCollapsable {
