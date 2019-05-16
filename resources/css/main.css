@@ -169,9 +169,18 @@
 }
 .top-bar .before-header{
   border-bottom-style: solid;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
+.wrapper-main .navbar a,
 .header-bottom-line{
   font-size: 0.86rem;
+}
+.top-bar .controls-list i.flag-icon{
+  font-size: 1rem !important;
+  vertical-align: baseline;
+}
+.header-bottom-line{
   background-color: #f3f3f3;
   text-transform: uppercase;
   color: #000;
@@ -181,6 +190,7 @@
 }
 .wrapper-main .navbar{
   padding-left: 15px;
+  padding-top: 0;
 }
 .top-bar .site-logo{
   position: absolute;
@@ -200,6 +210,11 @@
   #mainNavbarCollapsable {
     width: auto;
     padding: 0;
+  }
+}
+@media (max-width: 991px){
+  .navbar-toggler{
+    left: 0;
   }
 }
 
