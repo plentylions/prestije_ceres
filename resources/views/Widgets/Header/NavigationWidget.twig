@@ -48,15 +48,17 @@
     <div class="before-header">
         <div class="container-max">
             <div class="row mx-0 flex-row align-items-center">
-                <div id="mainNavbarCollapsable" class="d-none d-lg-block">
-                    <ul class="breadcrumb">
-                        <li class="btnClose"></li>
-                    </ul>
+                <nav class="navbar{% if navigationStyle == 'megaMenu' %} megamenu{%endif%}">
+                    <div id="mainNavbarCollapsable" class="d-none d-lg-block">
+                        <ul class="breadcrumb">
+                            <li class="btnClose"></li>
+                        </ul>
 
-                    <ul class="mainmenu">
-                        {{ Twig.print(Twig.call("Tree.get_nav_bar", [Twig.var("categories"), "", megaMenuLevels, megaMenuMaxItems, realMaxRootItems])) }}
-                    </ul>
-                </div>
+                        <ul class="mainmenu">
+                            {{ Twig.print(Twig.call("Tree.get_nav_bar", [Twig.var("categories"), "", megaMenuLevels, megaMenuMaxItems, realMaxRootItems])) }}
+                        </ul>
+                    </div>
+                </nav>
 
                 {% if enableLanguageSelect or enableShippingCountrySelect or enableCurrencySelect %}
                     <ul id="controlsListLeft" class="controls-list list-inline">
@@ -246,10 +248,8 @@
             {% endif %}
         </div>
     </div>
-</div>
 
-<nav class="widget-fw navbar{% if navigationStyle == 'megaMenu' %} megamenu{%endif%}">
-    <div class="nv-wrap">
+    <div class="header-bottom-line">
         <div class="container-max">
             <div class="row mx-0 flex-row align-items-center">
                 <div class="col-12 col-sm-6 col-md-8 searchCol nopad-mobile">
@@ -265,5 +265,4 @@
             </div>
         </div>
     </div>
-</nav>
-
+</div>
