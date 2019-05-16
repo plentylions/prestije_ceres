@@ -206,6 +206,9 @@
 .header-bottom-line .row{
   height: 55px;
 }
+.header-bottom-line .main-text-list .padding-item{
+  padding: 0 17px;
+}
 .wrapper-main .navbar{
   padding-left: 15px;
   padding-top: 0;
@@ -227,6 +230,25 @@
 .top-bar .controls-list>li a:not(.btn){
   color: #000 !important;
 }
+.top-bar .controls-list>li:not(.control-languages) a:not(.btn){
+  line-height: 1;
+}
+.control-basket .badge-right{
+  font-size: inherit;
+  color: #000;
+  background-color: transparent;
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.top-bar .controls-list .control-wish-list a .badge-right{
+  margin-right: 0;
+}
+.navbar-brand{
+  padding: 0;
+  margin: 0;
+}
 @media (min-width: 1200px){
   .wrapper-main #page-header .container-max{
     max-width: 100%;
@@ -247,6 +269,35 @@
     left: 0;
     padding-right: 5px;
     padding-left: 0;
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 500px){
+  .top-bar .site-logo{
+    width: 120px;
+  }
+  .top-bar .site-logo .navbar-brand img{
+    max-width: 120px;
+    padding-bottom: 5px;
+  }
+  .top-bar .controls-list>li a:not(.btn),
+  .top-bar .controls-list .control-wish-list a{
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .navbar-toggler .pl-baseline-search{
+    padding-left: 0;
+  }
+  .navbar-toggler{
+    padding-right: 0;
+  }
+}
+@media (max-width: 400px){
+  .top-bar .site-logo{
+    width: 90px;
+  }
+  .top-bar .site-logo .navbar-brand img{
+    max-width: 90px;
   }
 }
 .mobile-navigation .mobile-search{
