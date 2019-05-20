@@ -29,7 +29,8 @@ $(function () {
 
     $( ".product-list" ).wrap( "<div class='inf-scroll-parent'></div>" );
 
-    let $container = $('.product-list').parent().infiniteScroll({
+    let $container = $('.product-list').parent();
+    $container.infiniteScroll({
       path: nextUrl,
       append: false,
       history: false,
