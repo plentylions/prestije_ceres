@@ -2,8 +2,6 @@
 
 namespace PrestijeLegend\Providers;
 
-use Ceres\Caching\NavigationCacheSettings;
-use Ceres\Caching\SideNavigationCacheSettings;
 use IO\Services\ContentCaching\Services\Container;
 use IO\Services\ItemSearch\Helper\ResultFieldTemplate;
 use Plenty\Plugin\ServiceProvider;
@@ -36,14 +34,6 @@ class PrestijeLegendServiceProvider extends ServiceProvider
 
         $dispatcher->listen('IO.init.templates', function (Partial $partial)
         {
-            pluginApp(Container::class)->register('Legend::PageDesign.Partials.Header.NavigationList.twig', NavigationCacheSettings::class);
-            pluginApp(Container::class)->register('Legend::PageDesign.Partials.Header.SideNavigation.twig', SideNavigationCacheSettings::class);
-
-            $partial->set('head', 'Ceres::PageDesign.Partials.Head');
-            $partial->set('header', 'Ceres::PageDesign.Partials.Header.Header');
-            $partial->set('page-design', 'Ceres::PageDesign.PageDesign');
-            $partial->set('footer', 'Ceres::PageDesign.Partials.Footer');
-
             $partial->set('head', 'Legend::PageDesign.Partials.Head');
             $partial->set('header', 'PrestijeLegend::PageDesign.Partials.Header.Header');
             $partial->set('page-design', 'Legend::PageDesign.PageDesign');
