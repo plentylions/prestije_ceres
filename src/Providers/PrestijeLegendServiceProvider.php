@@ -50,6 +50,11 @@ class PrestijeLegendServiceProvider extends ServiceProvider
             $container->setTemplate('PrestijeLegend::Item.SingleItemWrapper');
             return false;
         }, self::PRIORITY);
+
+        $dispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container)
+        {
+            $container->setTemplate('PrestijeLegend::Category.Item.CategoryItem');
+        }, self::PRIORITY);
     }
 }
 
