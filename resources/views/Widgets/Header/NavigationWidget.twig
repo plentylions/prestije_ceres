@@ -157,96 +157,96 @@
                 </ul>
             </div>
         </div>
-    </div>
 
-    <div class="container-max page-header">
-        <div class="row mx-0">
-            {% if enableCurrencySelect %}
-                <div id="currencySelect" class="cmp cmp-currency-select collapse">
-                    <div class="container-max">
-                        <div class="row py-3">
-
-                            <div class="currency-list col-12">
-                                <div class="list-title">
-                                    <strong>{{ Twig.print('trans("Ceres::Template.headerCurrency")') }}</strong>
-                                    <hr>
-                                </div>
-                                <ul class="text-center text-sm-left">
-                                    {{ Twig.set("activeCurrency", Twig.call("services.checkout.getCurrencyData().name")) }}
-                                    {{ Twig.for("currency", Twig.call("services.checkout.getCurrencyList")) }}
-                                    {{ Twig.if("currency.name in activeCurrencies or \"all\" in activeCurrencies or currency.name == activeCurrency") }}
-                                        <li{{ Twig.if("currency.name == activeCurrency") }} class="active"{{ Twig.endif() }}>
-                                            <a href="{{ Twig.print("queryString({currency: currency.name})") }}" rel="nofollow">
-                                                {{ Twig.if("currencyFormatSelect == 'all'") }}
-                                                    {{ Twig.print("currency.name") }} <br class="d-block d-sm-none" />({{ Twig.print("currency.symbol") }})
-                                                {{ Twig.else() }}
-                                                    {{ Twig.print("currency[currencyFormatSelect]") }}
-                                                {{ Twig.endif }}
-                                            </a>
-                                        </li>
-                                    {{ Twig.endif() }}
-                                    {{ Twig.endfor() }}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-
-            {% if enableLanguageSelect or enableShippingCountrySelect %}
-                <shop-country-settings
-                        country-flag-prefix="flag-icon-"
-                        shipping-countries="{{ Twig.print('services.country.getActiveCountriesList() | filterFields(["id", "currLangName", "isoCode2", "states.id", "states.name"]) | json_data("activeCountriesList")') }}"
-                        :shipping-country-id="{{ Twig.print('services.checkout.getShippingCountryId() | json_encode') }}">
-                    <div id="countrySettings" class="cmp cmp-country-settings collapse">
+        <div class="container-max page-header">
+            <div class="row mx-0">
+                {% if enableCurrencySelect %}
+                    <div id="currencySelect" class="cmp cmp-currency-select collapse">
                         <div class="container-max">
                             <div class="row py-3">
-                                {% if enableLanguageSelect %}
-                                    <div class="col-12 {% if enableShippingCountrySelect %}col-lg-6{% else %}col-lg-12{% endif %}">
 
-                                        <div class="language-settings">
-                                            <div class="list-title">
-                                                <strong>{{ Twig.print('trans("Ceres::Template.headerSelectLanguage")') }}</strong>
-                                                <hr>
-                                            </div>
-
-                                            {{ Twig.set("languageList", Twig.call("services.webstoreConfig.getActiveLanguageList")) }}
-                                            {{ Twig.set("languageUrls", Twig.call("services.url.getLanguageURLs")) }}
-                                            <ul>
-                                                {{ Twig.for("language", "languageList") }}
-                                                    <li{{ Twig.if("lang == language") }} class="active"{{ Twig.endif() }}>
-                                                        {{ Twig.set("url", "'/'") }}
-                                                        {{ Twig.if("languageUrls[language] is defined") }}
-                                                            {{ Twig.set("url", "languageUrls[language] ~ queryString") }}
-                                                        {{ Twig.elseif("language != defaultLanguage") }}
-                                                            {{ Twig.set("url", "'/' ~ language ~ urls.trailingSlashSuffix") }}
-                                                        {{ Twig.endif() }}
-                                                        <a href="{{ Twig.print("url") }}" data-update-url>
-                                                            <i class="flag-icon flag-icon-{{ Twig.print("language") }}"></i>
-                                                            {{ Twig.print('trans("Ceres::Template.header" ~ language | capitalize)') }}
-                                                        </a>
-                                                    </li>
-                                               {{ Twig.endfor() }}
-                                            </ul>
-                                        </div>
+                                <div class="currency-list col-12">
+                                    <div class="list-title">
+                                        <strong>{{ Twig.print('trans("Ceres::Template.headerCurrency")') }}</strong>
+                                        <hr>
                                     </div>
-                                {% endif %}
-                                {% if enableShippingCountrySelect %}
-                                   <div class="col-12 {% if enableLanguageSelect %}col-lg-6{% else %}col-lg-12{% endif %}">
-                                        <div class="shipping-settings">
-                                            <div class="list-title">
-                                                <strong>{{ Twig.print('trans("Ceres::Template.headerSelectShippingCountry")') }}</strong>
-                                                <hr>
-                                            </div>
-                                            <shipping-country-select :disable-input="{{ Twig.print(Twig.call('services.template.isCheckout') ~ ' | json_encode') }}"></shipping-country-select>
-                                        </div>
-                                    </div>
-                                {% endif %}
+                                    <ul class="text-center text-sm-left">
+                                        {{ Twig.set("activeCurrency", Twig.call("services.checkout.getCurrencyData().name")) }}
+                                        {{ Twig.for("currency", Twig.call("services.checkout.getCurrencyList")) }}
+                                        {{ Twig.if("currency.name in activeCurrencies or \"all\" in activeCurrencies or currency.name == activeCurrency") }}
+                                            <li{{ Twig.if("currency.name == activeCurrency") }} class="active"{{ Twig.endif() }}>
+                                                <a href="{{ Twig.print("queryString({currency: currency.name})") }}" rel="nofollow">
+                                                    {{ Twig.if("currencyFormatSelect == 'all'") }}
+                                                        {{ Twig.print("currency.name") }} <br class="d-block d-sm-none" />({{ Twig.print("currency.symbol") }})
+                                                    {{ Twig.else() }}
+                                                        {{ Twig.print("currency[currencyFormatSelect]") }}
+                                                    {{ Twig.endif }}
+                                                </a>
+                                            </li>
+                                        {{ Twig.endif() }}
+                                        {{ Twig.endfor() }}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </shop-country-settings>
-            {% endif %}
+                {% endif %}
+
+                {% if enableLanguageSelect or enableShippingCountrySelect %}
+                    <shop-country-settings
+                            country-flag-prefix="flag-icon-"
+                            shipping-countries="{{ Twig.print('services.country.getActiveCountriesList() | filterFields(["id", "currLangName", "isoCode2", "states.id", "states.name"]) | json_data("activeCountriesList")') }}"
+                            :shipping-country-id="{{ Twig.print('services.checkout.getShippingCountryId() | json_encode') }}">
+                        <div id="countrySettings" class="cmp cmp-country-settings collapse">
+                            <div class="container-max">
+                                <div class="row py-3">
+                                    {% if enableLanguageSelect %}
+                                        <div class="col-12 {% if enableShippingCountrySelect %}col-lg-6{% else %}col-lg-12{% endif %}">
+
+                                            <div class="language-settings">
+                                                <div class="list-title">
+                                                    <strong>{{ Twig.print('trans("Ceres::Template.headerSelectLanguage")') }}</strong>
+                                                    <hr>
+                                                </div>
+
+                                                {{ Twig.set("languageList", Twig.call("services.webstoreConfig.getActiveLanguageList")) }}
+                                                {{ Twig.set("languageUrls", Twig.call("services.url.getLanguageURLs")) }}
+                                                <ul>
+                                                    {{ Twig.for("language", "languageList") }}
+                                                        <li{{ Twig.if("lang == language") }} class="active"{{ Twig.endif() }}>
+                                                            {{ Twig.set("url", "'/'") }}
+                                                            {{ Twig.if("languageUrls[language] is defined") }}
+                                                                {{ Twig.set("url", "languageUrls[language] ~ queryString") }}
+                                                            {{ Twig.elseif("language != defaultLanguage") }}
+                                                                {{ Twig.set("url", "'/' ~ language ~ urls.trailingSlashSuffix") }}
+                                                            {{ Twig.endif() }}
+                                                            <a href="{{ Twig.print("url") }}" data-update-url>
+                                                                <i class="flag-icon flag-icon-{{ Twig.print("language") }}"></i>
+                                                                {{ Twig.print('trans("Ceres::Template.header" ~ language | capitalize)') }}
+                                                            </a>
+                                                        </li>
+                                                {{ Twig.endfor() }}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    {% if enableShippingCountrySelect %}
+                                    <div class="col-12 {% if enableLanguageSelect %}col-lg-6{% else %}col-lg-12{% endif %}">
+                                            <div class="shipping-settings">
+                                                <div class="list-title">
+                                                    <strong>{{ Twig.print('trans("Ceres::Template.headerSelectShippingCountry")') }}</strong>
+                                                    <hr>
+                                                </div>
+                                                <shipping-country-select :disable-input="{{ Twig.print(Twig.call('services.template.isCheckout') ~ ' | json_encode') }}"></shipping-country-select>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </shop-country-settings>
+                {% endif %}
+            </div>
         </div>
     </div>
 
