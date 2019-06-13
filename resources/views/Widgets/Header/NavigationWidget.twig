@@ -262,7 +262,6 @@
                     <span>nur 1-3 tage lieferzeit</span>
                 </div>
                 <div class="col-12 col-lg-3 d-none d-lg-block searchCol nopad-mobile">
-                    {% set overrideSearchBar = LayoutContainer.show("Ceres::Search.SearchBar") %}
                     {% if overrideSearchBar | trim is empty %}
                         <item-search 
                             :show-item-images="{{ showItemImages | json_encode }}"
