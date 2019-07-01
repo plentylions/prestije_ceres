@@ -50,6 +50,12 @@ class PrestijeLegendServiceProvider extends ServiceProvider
             return false;
         }, self::PRIORITY);
 
+        $dispatcher->listen('IO.tpl.login', function (TemplateContainer $container)
+        {
+            $container->setTemplate('PrestijeLegend::Customer.Login');
+            return false;
+        }, self::PRIORITY);
+
         $dispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container)
         {
             $container->setTemplate('PrestijeLegend::Category.Item.CategoryItem');

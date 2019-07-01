@@ -352,7 +352,8 @@
 }
 
 /* Basket */
-.basket-item-container .basket-item .image-container{
+.basket-item-container .basket-item .image-container,
+.basket-item-container .basket-item .image-container img{
   max-height: 100px;
 }
 .basket-item-container .basket-item .meta-container-wrapper .meta-container-wrapper-inner{
