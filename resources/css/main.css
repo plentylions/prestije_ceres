@@ -350,6 +350,9 @@
   font-size: 1.8rem;
   top: -1px;
 }
+.basket-preview-hover-wrapper{
+  line-height: initial;
+}
 
 /* Basket */
 .basket-item-container .basket-item .image-container,
