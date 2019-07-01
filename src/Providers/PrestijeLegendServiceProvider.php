@@ -2,7 +2,6 @@
 
 namespace PrestijeLegend\Providers;
 
-use IO\Services\ContentCaching\Services\Container;
 use IO\Services\ItemSearch\Helper\ResultFieldTemplate;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Events\Dispatcher;
@@ -36,7 +35,7 @@ class PrestijeLegendServiceProvider extends ServiceProvider
         {
             $partial->set('head', 'Legend::PageDesign.Partials.Head');
             $partial->set('header', 'PrestijeLegend::PageDesign.Partials.Header.Header');
-            $partial->set('page-design', 'Legend::PageDesign.PageDesign');
+            $partial->set('page-design', 'PrestijeLegend::PageDesign.PageDesign');
             $partial->set('footer', 'Legend::PageDesign.Partials.Footer');
         }, self::PRIORITY);
 
