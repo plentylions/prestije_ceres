@@ -1,0 +1,90 @@
+{% if services.template.isCurrentTemplate('tpl.category.item') or services.template.isCurrentTemplate('tpl.category.content') or services.template.isCurrentTemplate('tpl.search') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            <h1 class="category-title heading">
+                {% if category is defined %}
+                    {{ category.details[0].name }}
+                {% else %}
+                    {{ trans("Ceres::Template.itemSearchResults") }} {{ searchString }}
+                {% endif %}
+            </h1>
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.item') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            <h1 class="heading">{{ item.documents[0].data | itemName }}</h1>
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.contact') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            <h1 class="heading">{{ trans("Ceres::Template.contact") }}</h1>
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.wish-list') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            <h1 class="heading">{{ trans("Ceres::Template.wishList") }}</h1>
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.basket') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            <h1 class="heading">{{ trans("Ceres::Template.basket") }}</h1>
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.login') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            <h1 class="heading login-view-title">{{ trans("Ceres::Template.login") }}</h1>
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.checkout') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            <h1 class="heading">{{ trans("Ceres::Template.checkout") }}</h1>
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.cancellation-form') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            {% autoescape false %}<h1 class="heading">{{ trans("Ceres::Template.cancellationForm", {"hyphen": "&shy;"}) }}</h1>{% endautoescape %}
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.cancellation-rights') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            {% autoescape false %}<h1 class="heading">{{ trans("Ceres::Template.cancellationRights", {"hyphen": "&shy;"}) }}</h1>{% endautoescape %}
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.legal-disclosure') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            {% autoescape false %}<h1 class="heading">{{ trans("Ceres::Template.legalDisclosure") }}</h1>{% endautoescape %}
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.privacy-policy') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            {% autoescape false %}<h1 class="heading">{{ trans("Ceres::Template.privacyPolicy", {"hyphen": "&shy;"}) }}</h1>{% endautoescape %}
+        </div>
+    </div>
+{% endif %}
+{% if services.template.isCurrentTemplate('tpl.terms-conditions') %}
+    <div id="titleBeforeBreadcrumbs" class="container-max page-content">
+        <div class="crossed-heading">
+            {% autoescape false %}<h1 class="heading">{{ trans("Ceres::Template.termsAndConditions") }}</h1>{% endautoescape %}
+        </div>
+    </div>
+{% endif %}
