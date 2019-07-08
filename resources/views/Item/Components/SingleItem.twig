@@ -1,0 +1,44 @@
+{% import "Ceres::Item.Macros.AgeRestriction" as AgeRestriction %}
+
+{% set itemData = config("Ceres.item.data") | split(', ') %}
+{% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
+
+{% set lang = services.sessionStorage.getLang() %}
+
+<script type="x/template" id="vue-single-item">
+    <div>
+        <div class="single container-max page-content">
+            <div class="row mt-5 position-relative">
+                <div class="col-md-7">
+                    <slot name="image-carousel"></slot>
+                </div>
+                <div class="col-md-5 single-rightside">
+                    {% include "PrestijeLegend::Item.Components.SingleItem.SingleItem_Details" %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 my-5">
+                    {% include "Legend::Item.Components.SingleItem.SingleItem_InformationTable" %}
+                </div>
+            </div>
+            {% if config("Legend.singleItemParallax.hide") == "false" %}
+            <div class="single-item-parallax">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        {% if lang == "de" %}
+                            {{ config("Legend.singleItemParallax.html_de") | raw }}
+                        {% else %}
+                            {{ config("Legend.singleItemParallax.html_en") | raw }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <div class="sinle-item-list-container">
+                <slot name="cross-selling-accessory"></slot>
+                <slot name="item-list-container"></slot>
+            </div>
+            <slot name="feedback-container"></slot>
+        </div>
+    </div>
+</script>
