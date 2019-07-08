@@ -158,13 +158,23 @@
     }
 }
 
+@media (max-width: 568px){
+  #add-item-to-basket-overlay .modal-footer{
+    flex-wrap: wrap;
+  }
+  #add-item-to-basket-overlay .modal-footer > a{
+    width: 100%;
+    margin: 0 0 5px 0 !important
+  }
+}
+
 /* Header */
 .top-bar .before-header.sticky{
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 1069;
 }
 .navbar-toggler{
   position: relative;
