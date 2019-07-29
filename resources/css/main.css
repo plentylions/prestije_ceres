@@ -170,18 +170,41 @@
 
 /* Findologic */
 .findologic-container{
-  display: inline-block;
+  display: block;
   text-align: left;
 }
 .findologic-container .fl-range-slider-container{
   padding-left: 0;
   padding-right: 0;
 }
+.fl-range-slider-container .row > .col-md-6.col-xs-6{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-right: 0;
+}
+.fl-range-slider-container .fl-range-input{
+  flex: 1 0 auto;
+}
+.fl-color-tile-label{
+  margin-bottom: 0;
+}
+.fl-item-color-tiles-container .fl-item-color-tiles-list .fl-item-color-tiles-list-item {
+  margin: 10px 10px 0 0;
+}
 @media (min-width: 768px){
-  .findologic-container .list-controls #filterCollapse .page-content .card,
-  .findologic-container .list-controls #filterCollapse .page-content .cmp-address-list .items>div:first-child,
-  .findologic-container .cmp-address-list .list-controls #filterCollapse .page-content .items>div:first-child {
-      padding-right: 2em;
+  .findologic-container .page-content .card {
+      padding-right: 2em !important;
+  }
+}
+@media (min-width: 576px){
+  .findologic-container{
+    display: inline-block;
+  }
+  .list-controls .filter-wrapper {
+      display: inline-block;
+      padding: 0.5em 0 0.5em 0.5em;
+      margin-right: -0.5rem;
   }
 }
 
