@@ -60,6 +60,10 @@ class PrestijeLegendServiceProvider extends ServiceProvider
         {
             $container->setTemplate('PrestijeLegend::Category.Item.CategoryItem');
         }, self::PRIORITY);
+        $dispatcher->listen('IO.tpl.search', function (TemplateContainer $container)
+        {
+            $container->setTemplate('PrestijeLegend::Category.Item.CategoryItem');
+        }, self::PRIORITY);
     }
 }
 
