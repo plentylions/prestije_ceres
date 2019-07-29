@@ -168,6 +168,11 @@
   }
 }
 
+/* Findologic */
+.findologic-container{
+  display: inline-block;
+}
+
 /* Header */
 .top-bar .before-header.sticky{
   position: fixed;

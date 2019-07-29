@@ -30,5 +30,13 @@
             "description": "Prestije Tracking order confirmation",
             "defaultLayoutContainer": "OrderConfirmation.BeforeOrderDetails"
         }
+    ],
+    "containers":
+    [
+        {
+            "key"           : "CategoryItem.FindologicFilters",
+            "name"          : "CategoryItem.FindologicFilters",
+            "description"   : "CategoryItem.FindologicFilters"
+        }
     ]
 }
