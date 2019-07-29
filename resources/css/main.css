@@ -190,7 +190,7 @@
   margin-bottom: 0;
 }
 .fl-item-color-tiles-container .fl-item-color-tiles-list .fl-item-color-tiles-list-item {
-  margin: 10px 10px 0 0;
+  margin: 10px 10px 0 0 !important;
 }
 @media (min-width: 768px){
   .findologic-container .page-content .card {
