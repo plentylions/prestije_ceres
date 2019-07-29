@@ -171,6 +171,18 @@
 /* Findologic */
 .findologic-container{
   display: inline-block;
+  text-align: left;
+}
+.findologic-container .fl-range-slider-container{
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 768px){
+  .findologic-container .list-controls #filterCollapse .page-content .card,
+  .findologic-container .list-controls #filterCollapse .page-content .cmp-address-list .items>div:first-child,
+  .findologic-container .cmp-address-list .list-controls #filterCollapse .page-content .items>div:first-child {
+      padding-right: 2em;
+  }
 }
 
 /* Header */

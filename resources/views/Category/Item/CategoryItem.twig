@@ -25,12 +25,12 @@
                         </div>
                     </div>
 
-                    {% set overrideSearchFilters = LayoutContainer.show("Ceres::Search.Filter", facets ) %}
+                    {#{% set overrideSearchFilters = LayoutContainer.show("Ceres::Search.Filter", facets ) %}
                     {% if overrideSearchFilters | trim is empty %}
                         <item-filter-list template="#vue-item-filter-list-side" :facet-data="{{ facets | json_encode }}"></item-filter-list>
                     {% else %}
                         {{ overrideSearchFilters }}
-                    {% endif %}
+                    {% endif %}#}
 
                     {{ LayoutContainer.show("Ceres::CategoryItem.SideNavBarBottom") }}
                 </div>
@@ -68,7 +68,7 @@
 
                                     {% include "Ceres::Category.Item.Partials.ItemsPerPage" with { 'itemsPerPage': searchOptions.itemsPerPage, 'selectedValue': itemsPerPage } %}
 
-                                    {% if ceresConfig.header.showNavBars not in ["side", "both"] %}
+                                    {#{% if ceresConfig.header.showNavBars not in ["side", "both"] %}
                                         {% set overrideSearchFilters = LayoutContainer.show("Ceres::Search.Filter", facets ) %}
                                         {% if overrideSearchFilters | trim is empty %}
                                             <item-filter-list :facet-data="{{ facets | json_encode }}">
@@ -89,7 +89,7 @@
                                                 </a>
                                             </div>
                                         {% endif %}
-                                    {% endif %}
+                                    {% endif %}#}
 
                                     {{ LayoutContainer.show("PrestijeLegend::CategoryItem.FindologicFilters") }}
                                 </div>
