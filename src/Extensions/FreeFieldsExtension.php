@@ -5,7 +5,6 @@ use Plenty\Plugin\Templates\Extensions\Twig_Extension;
 use Plenty\Plugin\Templates\Factories\TwigFactory;
 use Plenty\Modules\Item\Item\Contracts\ItemRepositoryContract;
 
-
 class FreeFieldsExtension extends Twig_Extension
 {
 

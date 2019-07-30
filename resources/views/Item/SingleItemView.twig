@@ -1,16 +1,16 @@
-{{ component( "PrestijeLegend::Item.Components.VariationSelect" ) }}
-{{ component( "Ceres::Item.Components.ItemImageCarousel" ) }}
+{{ component( "Legend::Basket.Components.AddToBasket" ) }}
 {{ component( "Legend::Item.Components.AddToWishList" ) }}
+{{ component( "Ceres::Item.Components.GraduatedPrices" ) }}
+{{ component( "Ceres::Item.Components.ItemBundle" ) }}
+{{ component( "Ceres::Item.Components.ItemImageCarousel" ) }}
 {{ component( "Ceres::Item.Components.OrderProperties" ) }}
 {{ component( "Ceres::Item.Components.OrderPropertyList" ) }}
 {{ component( "PrestijeLegend::Item.Components.SingleItem" ) }}
-{{ component( "Legend::Item.Components.GraduatedPrices" ) }}
-{{ component( "Legend::Basket.Components.AddToBasket" ) }}
-{{ component( "Ceres::Item.Components.ItemBundle" ) }}
+{{ component( "PrestijeLegend::Item.Components.VariationSelect" ) }}
 
 {% set freeFields = getFree(item.documents[0].data.item.id) %}
 
-<single-item v-cloak template="#vue-single-item" item-data="{{ item | json_data }}" variation-list-data="{{ variations | json_data }}" :attribute-name-map="{{attributeNameMap | json_encode}}" :variation-units="{{variationUnits | json_encode}}">
+<single-item v-cloak item-data="{{ item | json_data }}" attributes-data="{{ attributes | json_data }}" variations="{{ variations | json_data }}">
     <template #before-price>{{ LayoutContainer.show("Ceres::SingleItem.BeforePrice", item.documents[0].data) }}</template>
     <template #after-price>{{ LayoutContainer.show("Ceres::SingleItem.AfterPrice", item.documents[0].data) }}</template>
     <template #before-add-to-basket>{{ LayoutContainer.show("Ceres::SingleItem.BeforeAddToBasket", item.documents[0].data) }}</template>
@@ -19,7 +19,37 @@
     <template #additional-content-after-vat>{{ LayoutContainer.show("Ceres::SingleItem.AdditionalContentAfterVAT", item.documents[0].data) }}</template>
     <template #add-detail-tabs>{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabs", item.documents[0].data) }}</template>
     <template #add-detail-tabs-content>{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabsContent", item.documents[0].data) }}</template>
+    <template #cross-selling-accessory>
+        {% for accessory in accessories %}
+            {% if accessory['items']|length > 0 %}
+                <div class="row legend-accessories" data-relation="{{ accessory['relation'] }}">
+                    <div class="col-12">
+                        <hr>
+                        <p class="h3"> {{ trans("Legend::Template.singleItemListTitle" ~ accessory['relation']) }}</p>
+                    </div>
+                    {{ component( "Ceres::PageDesign.Components.Carousel" ) }}
+
+                    <div class="col-12">
+                        <carousel>
+                            {% for listItem in accessory['items'] %}
+                                <template slot="items">
+                                    <category-item
+                                        :item-data="{{ listItem.data | json_encode }}"
+                                        :decimal-count="{{ ceresConfig.item.storeSpecial }}"
+                                        :disable-carousel-on-mobile="true">
+                                        <template #before-prices>{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", listItem.data) }}</template>
+                                        <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", listItem.data) }}</template>
+                                    </category-item>
+                                </template>
+                            {% endfor %}
+                        </carousel>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </template>
     <template #item-list-container>{{ LayoutContainer.show("Ceres::SingleItem.ItemListContainer", item) }}</template>
+    <template #legend-feedback-container>{{ LayoutContainer.show("Legend::SingleItem.FeedbackContainerTab", item) }}</template>
     <template #feedback-container>{{ LayoutContainer.show("Ceres::SingleItem.FeedbackContainer", item) }}</template>
     <template #image-carousel>
         {% set ImageCarouselOverride = LayoutContainer.show("Ceres::SingleItem.ImageCarousel") %}
