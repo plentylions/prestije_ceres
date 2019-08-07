@@ -9,6 +9,7 @@ use Plenty\Plugin\Templates\Twig;
 use IO\Helper\TemplateContainer;
 use IO\Helper\ResourceContainer;
 use IO\Extensions\Functions\Partial;
+use IO\Helper\ComponentContainer;
 use Plenty\Plugin\ConfigRepository;
 
 use PrestijeLegend\Extensions\FreeFieldsExtension;
@@ -30,6 +31,13 @@ class PrestijeLegendServiceProvider extends ServiceProvider
     public function boot(Twig $twig, Dispatcher $dispatcher)
     {
         $twig->addExtension(FreeFieldsExtension::class);
+
+        $dispatcher->listen('IO.Component.Import', function (ComponentContainer $componentContainer)
+        {
+            if($componentContainer->getOriginComponentTemplate() == 'Ceres::Basket.Components.BasketTotals'){
+                $componentContainer->setNewComponentTemplate('PrestijeLegend::Basket.Components.BasketTotals');
+            }
+        }, self::PRIORITY);
 
         $dispatcher->listen('IO.init.templates', function (Partial $partial)
         {
