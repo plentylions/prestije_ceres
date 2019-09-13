@@ -45,7 +45,7 @@
 
 {{ Twig.import("Tree", "Legend::Category.Macros.CategoryTree") }}
 
-<div class="widget-fw top-bar">
+<div class="widget-fw unfixed top-bar">
     <div class="before-header" {% if isFixed %}data-sticky="true"{% endif %}>
         <div class="container-max">
             <div class="row mx-0 flex-row align-items-center">
@@ -164,7 +164,7 @@
                 {% if enableCurrencySelect and not isPreview %}
                     <div id="currencySelect" class="cmp cmp-currency-select collapse">
                         <div class="container-max">
-                            <div class="row py-3">
+                            <div class="row p-3">
                                 <div class="currency-list col-12">
                                     <div class="list-title">
                                         <strong>{{ Twig.print('trans("Ceres::Template.headerCurrency")') }}</strong>
@@ -199,7 +199,7 @@
                     {% if enableLanguageSelect or enableShippingCountrySelect %}
                         <div id="countrySettings" class="cmp cmp-country-settings collapse">
                             <div class="container-max">
-                                <div class="row py-3">
+                                <div class="row p-3">
                                     {% if enableLanguageSelect and not isPreview %}
                                         <div class="col-12 {% if enableShippingCountrySelect %}col-lg-6{% else %}col-lg-12{% endif %}">
 

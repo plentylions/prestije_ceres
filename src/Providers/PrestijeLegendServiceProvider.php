@@ -45,6 +45,7 @@ class PrestijeLegendServiceProvider extends ServiceProvider
             $partial->set('header', 'PrestijeLegend::PageDesign.Partials.Header.Header');
             $partial->set('page-design', 'PrestijeLegend::PageDesign.PageDesign');
             $partial->set('footer', 'Legend::PageDesign.Partials.Footer');
+            $partial->set('page-metadata', 'Legend::PageDesign.Partials.PageMetadata');
         }, self::PRIORITY);
 
         $dispatcher->listen('IO.Resources.Import', function (ResourceContainer $container) {
