@@ -85,7 +85,7 @@
             :missing-order-properties="variationMissingProperties"
             :is-variation-selected="isVariationSelected && currentVariation.filter.isSalable"
             :has-price="currentVariation | hasItemDefaultPrice">
-                {% if "wish-list" in enabledRoutes or "all" in enabledRoutes %}
+                {% if services.url.isRouteEnabled("wish-list") %}
                    <div class="col-3 col-sm-6 col-md-4 col-lg-4">
                         <add-to-wish-list :variation-id="currentVariation.variation.id"></add-to-wish-list>
                     </div>

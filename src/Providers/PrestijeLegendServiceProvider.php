@@ -15,10 +15,6 @@ use Plenty\Plugin\ConfigRepository;
 use PrestijeLegend\Extensions\FreeFieldsExtension;
 
 
-/**
- * Class PrestijeLegendServiceProvider
- * @package PrestijeLegend\Providers
- */
 class PrestijeLegendServiceProvider extends ServiceProvider
 {
     const PRIORITY = 0;

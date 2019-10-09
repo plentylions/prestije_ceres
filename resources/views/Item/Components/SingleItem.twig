@@ -1,20 +1,19 @@
 {% import "Ceres::Item.Macros.AgeRestriction" as AgeRestriction %}
 
 {% set itemData = config("Ceres.item.data") | split(', ') %}
-{% set enabledRoutes = config("IO.routing.enabled_routes") | split(', ') %}
 
 {% set lang = services.sessionStorage.getLang() %}
 
 <script type="x/template" id="vue-single-item">
     <div>
-        <slot name="default" :getDataField="getDataField" :getFilteredDataField="getFilteredDataField">
+        <slot :getDataField="getDataField" :getFilteredDataField="getFilteredDataField">
             <div class="single container-max page-content">
                 <div class="row mt-5 position-relative">
                     <div class="col-12 col-md-7" id="item-container">
                         <slot name="image-carousel"></slot>
                     </div>
                     <div class="col-12 col-md-5 single-rightside">
-                        <div v-stick-in-parent data-sticky-container="#item-container">
+                        <div {% if config("Legend.singleItemStickBlock.disable") == "false" %}v-stick-in-parent data-sticky-container=".single-rightside"{% endif %}>
                             {% include "PrestijeLegend::Item.Components.SingleItem.SingleItem_Details" %}
                         </div>
                     </div>
@@ -28,8 +27,8 @@
                 <div class="single-item-parallax">
                     <div class="row">
                         <div class="col-12 text-center">
-                            {% if lang == "de" %}
-                                {{ config("Legend.singleItemParallax.html_de") | raw }}
+                            {% if lang in ["de", "it", "es", "pl", "fr"] %}
+                                {{ config("Legend.singleItemParallax.html_"~lang) | raw }}
                             {% else %}
                                 {{ config("Legend.singleItemParallax.html_en") | raw }}
                             {% endif %}
