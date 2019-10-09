@@ -156,6 +156,9 @@
     .fvideo-open-button .text{
         display: none;
     }
+    .single-carousel .owl-item img{
+      height: auto !important;
+    }
 }
 
 @media (max-width: 568px){
