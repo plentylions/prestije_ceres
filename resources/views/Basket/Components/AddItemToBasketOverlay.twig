@@ -46,7 +46,7 @@
                                     <span>${ attribute.value.names.name }</span>
                                 </p>
 
-                                <p class="small" v-for="attribute in variation.attributes">
+                                <p class="small" v-for="property in variation.properties">
                                     <template v-if="orderParamValue(property.property.id)">
                                         <strong>${ property.property.names.name } (+ ${ variation.properties | propertySurcharge(property.property.id) | currency })</strong>
                                         <span v-if="property.property.valueType === 'file'">
